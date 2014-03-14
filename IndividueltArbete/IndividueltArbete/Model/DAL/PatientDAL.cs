@@ -20,7 +20,7 @@ namespace IndividueltArbete.Model.DAL
 
                     var patients = new List<Patient>(100);
 
-                    var cmd = new SqlCommand("", conn);
+                    var cmd = new SqlCommand("appSchema.usp_getpatients", conn);
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     conn.Open();
@@ -33,6 +33,7 @@ namespace IndividueltArbete.Model.DAL
                         var postalCode = reader.GetOrdinal("Postnr");
                         var city = reader.GetOrdinal("Ort");
                         var doctor = reader.GetOrdinal("Läkare");
+                        var doctorType = reader.GetOrdinal("Läkartyp");
 
                         while (reader.Read())
                         {
@@ -43,7 +44,8 @@ namespace IndividueltArbete.Model.DAL
                                 Address = reader.GetString(address),
                                 PostalCode = reader.GetString(postalCode),
                                 City = reader.GetString(city),
-                                Doctor = reader.GetString(doctor)
+                                Doctor = reader.GetString(doctor),
+                                DoctorType = reader.GetString(doctorType)
 
 
                             });
@@ -63,5 +65,36 @@ namespace IndividueltArbete.Model.DAL
             }
         }
 
+        public void AddPatient(Patient patient)
+        {
+            using (var conn = CreateConnection())
+            {
+                try
+                {
+                    var cmd = new SqlCommand("Person.uspAddContact", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Add("@Name", SqlDbType.VarChar, 101).Value = patient.Name;
+                    cmd.Parameters.Add("@Adress", SqlDbType.VarChar, 30).Value = patient.Address;
+                    cmd.Parameters.Add("@Postnr", SqlDbType.VarChar, 6).Value = patient.PostalCode;
+                    cmd.Parameters.Add("@Ort", SqlDbType.VarChar, 25).Value = patient.City;
+                    cmd.Parameters.Add("@Läkare", SqlDbType.VarChar, 101).Value = patient.Doctor;
+
+
+                    cmd.Parameters.Add("@PatientID", SqlDbType.Int, 4).Direction = ParameterDirection.Output;
+
+                    conn.Open();
+
+                    cmd.ExecuteNonQuery();
+
+                    patient.PatientID = (int)cmd.Parameters["@PatientID"].Value;
+                }
+                catch
+                {
+                    throw new ApplicationException("Ett fell uppstod");
+                }
+            }
+ 
+        }
     }
 }

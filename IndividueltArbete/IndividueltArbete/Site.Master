@@ -4,28 +4,20 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Pasiafe</title>
+    <title>Patienter</title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
-    <Sdiv>
-        <asp:Button ID="Button2" runat="server" Text="Button" />
-        <asp:Button ID="Button1" runat="server" Text="Button" />
-        <div>
-            <asp:Button ID="Button3" runat="server" Text="Button" />
-
-        </div>
-        <p>noiphfenppoijngfw<div>3fewqfwqef</div>npie</p>
-        <div>
-            <asp:Button ID="Button4" runat="server" Text="Button" />
-
-        </div>
+    <div>
+        <h1>Patienter</h1>
+        <asp:HyperLink ID="HyperLink1" runat="server">Hem</asp:HyperLink>
+        <asp:HyperLink ID="HyperLink2" runat="server">Ny patient</asp:HyperLink>
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         
         </asp:ContentPlaceHolder>
-    </Sdiv>
+    </div>
     </form>
 </body>
 </html>

@@ -20,5 +20,6 @@ namespace IndividueltArbete.Model
 
         public string Doctor { get; set; }
 
+        public string DoctorType { get; set; }
     }
 }
