@@ -49,7 +49,7 @@ namespace IndividueltArbete.Pages.PatientPages
             {
                 Service.DeletePatient(PatientID);
                 Session["a"] = "Patienten har blivit raderad!!!";
-                Response.Redirect("~/Pages/PatientPages/Listing.aspx");
+                Response.Redirect(GetRouteUrl("Default"));
             }
             catch
             {

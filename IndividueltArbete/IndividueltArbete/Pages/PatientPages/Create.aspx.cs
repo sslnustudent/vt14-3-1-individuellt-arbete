@@ -35,7 +35,7 @@ namespace IndividueltArbete.Pages.PatientPages
                 {
                     Service.AddPatient(patient);
                     Session["a"] = "Patienten har sparats!!!";
-                    Response.Redirect("~/Pages/PatientPages/Listing.aspx");
+                    Response.Redirect(GetRouteUrl("Default"));
                 }
                 catch
                 {

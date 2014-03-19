@@ -12,7 +12,7 @@
     <form id="form1" runat="server">
     <div>
         <h1>Patienter</h1>
-        <asp:HyperLink ID="HyperLink1" NavigateUrl='<%$ RouteUrl:routename=PatientListing %>' runat="server" Text="Hem"></asp:HyperLink>
+        <asp:HyperLink ID="HyperLink4" NavigateUrl='<%$ RouteUrl:routename=PatientListing %>' runat="server" Text="Hem"></asp:HyperLink>
         <asp:HyperLink ID="HyperLink2" NavigateUrl='<%$ RouteUrl:routename=PatientCreate %>' runat="server" Text="Ny patient"></asp:HyperLink>
         <asp:HyperLink ID="HyperLink3" NavigateUrl='<%$ RouteURL:routename=DoctorListing %>' runat="server" Text="Läkare"></asp:HyperLink>
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">

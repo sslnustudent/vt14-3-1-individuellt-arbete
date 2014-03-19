@@ -158,7 +158,7 @@ namespace IndividueltArbete.Model.DAL
             {
                 try
                 {
-                    var cmd = new SqlCommand("Person.uspUpdateContact", conn);
+                    var cmd = new SqlCommand("appSchema.usp_updatedoctor", conn);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@LäkareID", doctor.DoctorID);
                     cmd.Parameters.Add("@Fnamn", SqlDbType.VarChar, 50).Value = doctor.FirstName;

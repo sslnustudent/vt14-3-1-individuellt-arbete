@@ -62,6 +62,14 @@ namespace IndividueltArbete.Model
 
         public void AddDoctor(Doctor doctor)
         {
+            var validationContext = new ValidationContext(doctor);
+            var validationResults = new List<ValidationResult>();
+            if (!Validator.TryValidateObject(doctor, validationContext, validationResults, true))
+            {
+                var ex = new ValidationException("Objektet klarade inte valideringen.");
+                ex.Data.Add("ValidationResults", validationResults);
+                throw ex;
+            }
             DoctorDAL.AddDoctor(doctor);
         }
 
@@ -72,6 +80,14 @@ namespace IndividueltArbete.Model
 
         public void UpdateDoctor(Doctor doctor)
         {
+            var validationContext = new ValidationContext(doctor);
+            var validationResults = new List<ValidationResult>();
+            if (!Validator.TryValidateObject(doctor, validationContext, validationResults, true))
+            {
+                var ex = new ValidationException("Objektet klarade inte valideringen.");
+                ex.Data.Add("ValidationResults", validationResults);
+                throw ex;
+            }
             DoctorDAL.UpdateDoctor(doctor);
         }
 

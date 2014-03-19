@@ -8,7 +8,7 @@
             </h1>
             <div id="OkDiv" runat="server" visible="false">
             <asp:Label ID="LabelOk" runat="server" Text="Label"></asp:Label>
-            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl='~/Default.aspx'>
+            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl='<%$ RouteUrl:routename=PatientListing %>'>
                 <asp:Image  ImageUrl="~/DeleteRed.png" Width="20px" ID="Delete" runat="server" /></asp:HyperLink>
             </div>
             <asp:ValidationSummary ID="ValidationSummary1" HeaderText="Ett fel har inträffat" runat="server" />
@@ -19,42 +19,42 @@
                 DataKeyNames="PatientID"
                 DeleteMethod="PatientFormView_DeleteItem">
                 <ItemTemplate>
-                    <div class="editor-label">
+                    <h3>
                         <label for="Name">Namn</label>
-                    </div>
-                    <div class="editor-field">
-                        <%#: Item.Name %>
-                    </div>
-                    <div class="editor-label">
+                    </h3>
+                    <p>
+                        <%#: (Item.FirstName + " " + Item.LastName) %> 
+                    </p>
+                    <h3>
                         <label for="Address">Adress</label>
-                    </div>
-                    <div class="editor-field">
+                    </h3>
+                    <p>
                         <%#: Item.Address %>
-                    </div>
-                    <div class="editor-label">
+                    </p>
+                    <h3>
                         <label for="PostalCode">Postnummer</label>
-                    </div>
-                    <div class="editor-field">
+                    </h3>
+                    <p>
                         <%#: Item.PostalCode %>
-                    </div>
-                    <div class="editor-label">
+                    </p>
+                    <h3>
                         <label for="City">Ort</label>
-                    </div>
-                    <div class="editor-field">
+                    </h3>
+                    <p>
                         <%#: Item.City %>
-                    </div>
-                    <div class="editor-label">
+                    </p>
+                    <h3>
                         <label for="City">Läkare</label>
-                    </div>
-                    <div class="editor-field">
+                    </h3>
+                    <p>
                         <%#: Item.Doctor %>
-                    </div>
-                    <div class="editor-label">
+                    </p>
+                    <h3>
                         <label for="City">Typ av läkare</label>
-                    </div>
-                    <div class="editor-field">
+                    </h3>
+                    <p>
                         <%#: Item.DoctorType %>
-                    </div>
+                    </p>
 
 
                     <div>

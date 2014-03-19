@@ -4,10 +4,10 @@
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <link href="../../Style.css" rel="stylesheet" />
+    <link href="~/Style.css" rel="stylesheet" />
         <div id="OkDiv" runat="server" visible="false">
             <asp:Label ID="LabelOk" runat="server" Text="Label"></asp:Label>
-            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl='~/Default.aspx'>
+            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl='<%$ RouteUrl:routename=PatientListing %>'>
                 <asp:Image  ImageUrl="~/DeleteRed.png" Width="20px" ID="Delete" runat="server" /></asp:HyperLink>
         </div>
     <asp:ValidationSummary ID="ValidationSummary1" HeaderText="Ett fel har inträffat" runat="server" />

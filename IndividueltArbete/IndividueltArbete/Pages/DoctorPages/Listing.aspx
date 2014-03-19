@@ -3,6 +3,14 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <link href="../../Style.css" rel="stylesheet" />
+    <div id="OkDiv" runat="server" visible="false">
+        <asp:Label ID="LabelOk" runat="server" Text="Label"></asp:Label>
+        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl='~/Pages/DoctorPages/Listing.aspx'>
+            <asp:Image ImageUrl="~/DeleteRed.png" Width="20px" ID="Delete" runat="server" />
+        </asp:HyperLink>
+    </div>
+    <asp:ValidationSummary ID="ValidationSummary1" HeaderText="Ett fel har uppståt" runat="server" />
+    <asp:ValidationSummary ID="ValidationSummary2" HeaderText="Ett fel har uppståt" runat="server"  ValidationGroup="EditG"/>
     <asp:ListView ID="PatientListView" runat="server" ItemType="IndividueltArbete.Model.Doctor" 
         SelectMethod="PatientListView_GetData"
         InsertMethod="PatientListView_InsertItem"
@@ -47,11 +55,11 @@
                 <tr>
 
                     <td>
-                        <asp:TextBox ID="FirstName1" runat="server" Text='<%# BindItem.FirstName %>' />
+                        <asp:TextBox ID="FirstName1" runat="server" Text='<%# BindItem.FirstName %>' MaxLength="50" />
                         <asp:RequiredFieldValidator ControlToValidate="FirstName1" ID="RequiredFieldValidator11" runat="server" ErrorMessage="Ange ett förnamn" Display="None"></asp:RequiredFieldValidator>
                     </td>
                     <td>
-                        <asp:TextBox ID="LastName1" runat="server" Text='<%# BindItem.LastName %>' />
+                        <asp:TextBox ID="LastName1" runat="server" Text='<%# BindItem.LastName %>' MaxLength="50"/>
                         <asp:RequiredFieldValidator ControlToValidate="LastName1" ID="RequiredFieldValidator21" runat="server" ErrorMessage="Ange ett Efternamn" Display="None"></asp:RequiredFieldValidator>
                     </td>
                     <td>

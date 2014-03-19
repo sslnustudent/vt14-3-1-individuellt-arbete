@@ -234,6 +234,7 @@ namespace IndividueltArbete.Model.DAL
                         var fname = reader.GetOrdinal("Fnamn");
                         var sname = reader.GetOrdinal("Enamn");
                         var doctorType = reader.GetOrdinal("Läkartyp");
+                        var doctorTypeid = reader.GetOrdinal("LäkartypID");
 
                         while (reader.Read())
                         {
@@ -243,7 +244,8 @@ namespace IndividueltArbete.Model.DAL
                                 Name = reader.GetString(name),
                                 FirstName = reader.GetString(fname),
                                 LastName = reader.GetString(sname),
-                                DoctorTypes = reader.GetString(doctorType)
+                                DoctorTypes = reader.GetString(doctorType),
+                                DoctorTypeId = reader.GetInt32(doctorTypeid)
                             });
                         }
                     }
