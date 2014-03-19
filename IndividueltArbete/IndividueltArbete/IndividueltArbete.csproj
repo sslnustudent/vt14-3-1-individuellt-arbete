@@ -59,7 +59,12 @@
   <ItemGroup>
     <Content Include="AddPatient.aspx" />
     <Content Include="Default.aspx" />
-    <Content Include="PatientFull.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Pages\DoctorPages\Listing.aspx" />
+    <Content Include="Pages\PatientPages\Create.aspx" />
+    <Content Include="Pages\PatientPages\Details.aspx" />
+    <Content Include="Pages\PatientPages\Edit.aspx" />
+    <Content Include="Pages\PatientPages\Listing.aspx" />
     <Content Include="Style.css" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -71,6 +76,7 @@
     <Compile Include="AddPatient.aspx.designer.cs">
       <DependentUpon>AddPatient.aspx</DependentUpon>
     </Compile>
+    <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -78,16 +84,50 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
     <Compile Include="Model\DAL\DALBase.cs" />
+    <Compile Include="Model\DAL\DoctorDAL.cs" />
     <Compile Include="Model\DAL\PatientDAL.cs" />
+    <Compile Include="Model\Doctor.cs" />
+    <Compile Include="Model\DoctorType.cs" />
     <Compile Include="Model\Patient.cs" />
     <Compile Include="Model\Service.cs" />
-    <Compile Include="PatientFull.aspx.cs">
-      <DependentUpon>PatientFull.aspx</DependentUpon>
+    <Compile Include="Pages\DoctorPages\Listing.aspx.cs">
+      <DependentUpon>Listing.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="PatientFull.aspx.designer.cs">
-      <DependentUpon>PatientFull.aspx</DependentUpon>
+    <Compile Include="Pages\DoctorPages\Listing.aspx.designer.cs">
+      <DependentUpon>Listing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PatientPages\Create.aspx.cs">
+      <DependentUpon>Create.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\PatientPages\Create.aspx.designer.cs">
+      <DependentUpon>Create.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PatientPages\Details.aspx.cs">
+      <DependentUpon>Details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\PatientPages\Details.aspx.designer.cs">
+      <DependentUpon>Details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PatientPages\Edit.aspx.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\PatientPages\Edit.aspx.designer.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PatientPages\Listing.aspx.cs">
+      <DependentUpon>Listing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\PatientPages\Listing.aspx.designer.cs">
+      <DependentUpon>Listing.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
@@ -107,7 +147,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Pages\Shared\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

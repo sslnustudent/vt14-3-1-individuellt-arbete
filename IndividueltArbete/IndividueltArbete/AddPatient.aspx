@@ -13,12 +13,7 @@
     <p>Ort</p>
     <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
     <p>Läkare</p>
-    <asp:ListBox ID="ListBox1" runat="server" Rows="3" ItemType="IndividueltArbete.Model.Patient" SelectMethod="">
-        <asp:ListItem>
+    <asp:DropDownList ID="DoctorDropDownList" runat="server">
 
-            <asp:Repeater runat="server"><%#: Item.Läkare %></asp:Repeater>
-            
-        </asp:ListItem>
-
-    </asp:ListBox>
+    </asp:DropDownList>
 </asp:Content>
