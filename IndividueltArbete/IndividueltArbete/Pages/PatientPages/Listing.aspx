@@ -4,7 +4,6 @@
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <link href="~/Style.css" rel="stylesheet" />
         <div id="OkDiv" runat="server" visible="false">
             <asp:Label ID="LabelOk" runat="server" Text="Label"></asp:Label>
             <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl='<%$ RouteUrl:routename=PatientListing %>'>

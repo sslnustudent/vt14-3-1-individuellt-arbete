@@ -42,6 +42,7 @@
             </div>
             <div class="editor-field">
                 <asp:TextBox ID="PostalCode" runat="server" Text='<%# BindItem.PostalCode %>' MaxLength="5"/>
+                <asp:RegularExpressionValidator ControlToValidate="PostalCode" ID="RegularExpressionValidator1" runat="server" ErrorMessage="Postnummret är inte korrekt" ValidationExpression="[0-9][0-9][0-9][0-9][0-9]" Display="None"></asp:RegularExpressionValidator>
                 <asp:RequiredFieldValidator ControlToValidate="PostalCode" ID="RequiredFieldValidator4" runat="server" ErrorMessage="Ange ett postnummer" Display="None"></asp:RequiredFieldValidator>
             </div>
 

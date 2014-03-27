@@ -59,6 +59,7 @@
   <ItemGroup>
     <Content Include="AddPatient.aspx" />
     <Content Include="Default.aspx" />
+    <Content Include="DeleteRed.png" />
     <Content Include="Global.asax" />
     <Content Include="Pages\DoctorPages\Listing.aspx" />
     <Content Include="Pages\PatientPages\Create.aspx" />

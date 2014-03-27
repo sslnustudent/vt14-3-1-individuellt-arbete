@@ -27,6 +27,7 @@ namespace IndividueltArbete.Model
 
         [Required(ErrorMessage = "Ett postnummer måste anges.")]
         [StringLength(5, ErrorMessage = "postnummer kan bestå av som mest 5 tecken.")]
+        [RegularExpression(@"[0-9][0-9][0-9][0-9][0-9]", ErrorMessage = "Postnummret är inte korrekt sriven")]
         public string PostalCode { get; set; }
 
         [Required(ErrorMessage = "En ort måste anges.")]

@@ -3,7 +3,6 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <link href="../../Style.css" rel="stylesheet" />
     <asp:ValidationSummary ID="ValidationSummary1" HeaderText="Ett fel har inträffat" runat="server" />
     <asp:FormView ID="FormView1" runat="server"
         ItemType="IndividueltArbete.Model.Patient"
@@ -25,6 +24,7 @@
 
     <p>Postnr</p>
     <asp:TextBox ID="PostalCode" runat="server" Text='<%# BindItem.PostalCode %>' MaxLength="5"></asp:TextBox>
+    <asp:RegularExpressionValidator ControlToValidate="PostalCode" ID="RegularExpressionValidator1" runat="server" ErrorMessage="Postnummret är inte korrekt" ValidationExpression="[0-9][0-9][0-9][0-9][0-9]" Display="None"></asp:RegularExpressionValidator>
     <asp:RequiredFieldValidator ControlToValidate="PostalCode" ID="RequiredFieldValidator4" runat="server" ErrorMessage="Ange ett postnummer" Display="None"></asp:RequiredFieldValidator>
 
     <p>Ort</p>
